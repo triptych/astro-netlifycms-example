@@ -1,4 +1,14 @@
 ---
+	const title = "Astro NetlifyCMS Example"
+	const blogPosts = Astro
+		.fetchContent('./blog/*.md')
+		.map((post) => {
+			return (
+				<li>
+					<a href={post.url}>{post.title}</a>
+				</li>
+			)
+		})
 ---
 <html lang="en">
 
@@ -6,11 +16,12 @@
 	<meta charset="utf-8" />
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<meta name="viewport" content="width=device-width" />
-	<title>Welcome to Astro</title>
+	<title>{title}</title>
 </head>
 
 <body>
-	<h1>Welcome to <a href="https://astro.build/">Astro</a></h1>
+	<h1>{title}</h1>
+	<ol>{blogPosts}</ol>
 </body>
 
 </html>
