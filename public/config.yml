@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: master # CAREFUL: when updating content in the CMS, it will update on the master branch
+  branch: main # CAREFUL: when updating content in the CMS, it will update on the master branch
 
 publish_mode: editorial_workflow
 local_backend: true # allows for you to locally mess with your CMS
