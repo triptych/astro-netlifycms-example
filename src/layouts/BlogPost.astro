@@ -1,7 +1,7 @@
 ---
   const {content} = Astro.props;
   const {title, date, thumbnail} = content;
-  const formattedDate = new Intl.DateTimeFormat('en-US').format(new Date())
+  const formattedDate = new Intl.DateTimeFormat('en-US').format(new Date(date))
 ---
 <html lang="en">
 
@@ -18,14 +18,20 @@
 
     .hero__image {
       width: 100%;
-      /* height: min(30vh, 600px); */
       object-fit: cover;
       aspect-ratio: 16 / 9;
+    }
+    
+    nav {
+      margin-bottom: 2rem;
     }
   </style>
 </head>
 
 <body>
+  <nav>
+  <a href="/">Back to Main Page</a>
+  </nav>
   <main class="container">
     <img class="hero__image" src={thumbnail} alt=""/>
     <h2>{title}</h2>
