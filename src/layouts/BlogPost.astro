@@ -1,0 +1,36 @@
+---
+  const {content} = Astro.props;
+  const {title, date, thumbnail} = content;
+  const formattedDate = new Intl.DateTimeFormat('en-US').format(new Date())
+---
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<meta name="viewport" content="width=device-width" />
+	<title>{title}</title>
+  <style>
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .hero__image {
+      width: 100%;
+      /* height: min(30vh, 600px); */
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <img class="hero__image" src={thumbnail} alt=""/>
+    <h2>{title}</h2>
+    <time datetime={formattedDate}>{formattedDate}</time>
+    <slot/>
+  </main>
+</body>
+</html>
