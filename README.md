@@ -4,6 +4,10 @@ This was designed to be an example of how to use Astro and NetlifyCMS
 together. If you want a bit more explanation of the code, you can follow
 through [the blog post on my website](https://prince.dev/astro-netlify-cms)
 
+You can also go and deploy this onto Netlify already with:
+
+[![](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/maxcell/astro-netlifycms-example)
+
 ## Getting Started
 
 You will want to make sure to have Node installed. I currently used v16.18.0.
